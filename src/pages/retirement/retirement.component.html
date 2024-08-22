@@ -1,0 +1,52 @@
+<h3 class="mb-10 text-xl font-bold">My retirement</h3>
+<app-card>
+  <div class="flex justify-between items-center">
+    <h3 class="text-lg font-bold">Manage</h3>
+    <app-button type="secondary">Enquiry history</app-button>
+  </div>
+  <hr class="h-px my-8 bg-gray-200 border-0" />
+  <ng-container *ngIf="(isLoading$ | async) === false else loading">
+    <div *ngIf="(retirement$ | async) as retirement"
+         class="grid grid-cols-6 gap-4 gap-x-24">
+      <app-key-value class="col-span-6 sm:col-span-3"
+                     [key]="'Creation date'"
+                     [value]="retirement.createdAt"></app-key-value>
+      <app-key-value-action class="col-span-6 sm:col-span-3"
+                            [key]="'Investment account'"
+                            [value]="retirement.investmentAmount"
+                            [prefix]="currency"
+                            [suffix]="'(per mounth)'"
+                            [actionName]="'Adjust amount'"></app-key-value-action>
+
+      <app-key-value-editable class="col-span-6 sm:col-span-3"
+                            [key]="'Account number'"
+                            [value]="retirement.accountNumber"
+                            (editClick)="editAccountNumber()"></app-key-value-editable>
+
+      <app-key-value class="col-span-6 sm:col-span-3"
+                     [key]="'Accumulated investment amount'"
+                     [prefix]="currency"
+                     [value]="retirement.accumInvestAmount"></app-key-value>
+      <app-key-value-editable class="col-span-6 sm:col-span-3"
+                              [key]="'Charge date'"
+                              [value]="'1 of the month'"
+                              [suffix]="'(Next payment date: 2018-11-01)'"
+      ></app-key-value-editable>
+      <app-key-value-action class="col-span-6 sm:col-span-3"
+                            [key]="'Current market value'"
+                            [prefix]="currency"
+                            [actionName]="'Redemption'"
+                            [value]="retirement.currentValue"></app-key-value-action>
+      <app-key-value-action class="col-span-3 sm:col-full"
+                            [key]="'Status'"
+                            [value]="'Monthly charge'"
+                            [actionName]="'Suspension of investments'"
+      ></app-key-value-action>
+    </div>
+  </ng-container>
+
+</app-card>
+
+<ng-template #loading>
+  <app-spinner class="flex items-center justify-center w-full h-56"></app-spinner>
+</ng-template>

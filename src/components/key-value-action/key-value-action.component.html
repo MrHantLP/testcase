@@ -1,0 +1,4 @@
+<div class="flex justify-between items-center">
+  <app-key-value [key]="key" [prefix]="prefix" [value]="value" [suffix]="suffix"></app-key-value>
+  <app-button type="secondary" (click)="actionClick.emit()">{{actionName}}</app-button>
+</div>
