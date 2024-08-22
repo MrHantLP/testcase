@@ -14,7 +14,7 @@ Project based on Angular.io LTS (18.2.0)
 
 **Project Structure**
 
-* This project utilizes a standalone structure.
+* This project utilizes component standalone way.
 * Components folder contains various shared components such as key-value, card, button, etc., which can be reused.
 * Pages folder contains only one page - Retirement.
 * Services folder contains interface for retirement and a service for data retrieval. The service leverages
