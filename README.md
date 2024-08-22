@@ -1,3 +1,6 @@
+
+<img width="1552" alt="Снимок экрана 2024-08-23 в 01 33 51" src="https://github.com/user-attachments/assets/29497270-0df8-4adc-b1a5-0ee7256c3a61">
+
 To run just:
 1) `npm ci`
 2) `npm run start`
