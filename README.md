@@ -8,9 +8,9 @@ To run just:
 Project based on Angular.io LTS (18.2.0)
 
 **Ext libs used:**
-@ngrx - simplify state management
-tailwind - for structured and simple design
-flowbite - components lib on top of tailwind
+* @ngrx - simplify state management
+* tailwind - for structured and simple design
+* flowbite - components lib on top of tailwind
 
 **Project Structure**
 
